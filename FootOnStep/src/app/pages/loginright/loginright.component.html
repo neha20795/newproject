@@ -1,0 +1,42 @@
+<div class="input_form">
+	<div>
+	   <h1 class="Log-In">Log In</h1>
+	</div>
+  <div>
+    <label class="Username">Email</label>
+    <input [ngClass]="{'is-invalid': submitted && myForm.controls.email.errors}" type="text" formControlName='email'  required class="Rectangle-Copy" />
+    <div *ngIf="submitted && myForm.controls.email.errors">
+      <div *ngIf="submitted && myForm.controls.email.errors.required" class="text-danger">
+        Enter Your Email ID
+      </div>
+      <div *ngIf="submitted && myForm.controls.email.errors.email">
+        You must Enter Valid Email ID
+      </div>
+    </div>
+  </div>
+  <div>
+    <label class="Password">Password</label>
+    <input [ngClass]="{'is-invalid': submitted && myForm.controls.password.errors}" type="text" formControlName='password'  required class="Rectangle-Copy" />
+    <div *ngIf="submitted && myForm.controls.password.errors">
+      <div *ngIf="submitted && myForm.controls.password.errors.required" class="text-danger">
+        Enter Your password
+      </div>
+      <div *ngIf="submitted && myForm.controls.password.errors.password">
+        You must Enter Valid password
+      </div>
+    </div>
+  </div>
+	<div style="margin-top: 5%;">
+	  <a class="Forgot-password">Forgot Password???</a>
+	</div>
+	<div>
+	  <button class="Rectangle" (click)="login()">Login</button>
+	  <button class="Employee-Login">Employer</button>
+	</div>
+
+	<div>
+	  <p class="You-dont-have-an-ac">Don't have account?<a class="text-style-1">Signup</a></p>
+	</div>
+</div>
+
+

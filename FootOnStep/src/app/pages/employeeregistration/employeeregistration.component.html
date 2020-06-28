@@ -1,0 +1,93 @@
+
+<div class="container-fluid maincontentdiv Bg">
+  <div class="row">
+    <div class="col-6 fans">
+      <img src="../../../assets/logo.svg" class="Group-6">
+    </div>
+    <div class="col-6">
+      <div class="input_form">
+        <div>
+          <h1 class="Log-In">Sign Up</h1>
+        </div>
+        <form [formGroup]="myForm">
+            <div>
+              <label class="Username1">First Name</label><label class="Username2">Last Name</label>
+              <input [ngClass]="{'is-invalid': submitted && myForm.controls.email.errors}" type="text" formControlName='fname' required class="Rectangle-Copy1" />
+              <input [ngClass]="{'is-invalid': submitted && myForm.controls.email.errors}" type="text" formControlName='lname'  required class="Rectangle-Copy2" />
+              <div *ngIf="(submitted && myForm.controls.fname.errors) || (submitted && myForm.controls.fname.errors)">
+                <div *ngIf="submitted && myForm.controls.fname.errors.required" class="text-danger">
+                  Enter Your First name
+                </div>
+                <div *ngIf="submitted && myForm.controls.fname.errors.fname">
+                  You must Enter First Name
+                </div>
+                <div *ngIf="submitted && myForm.controls.lname.errors.required" class="text-danger">
+                  Enter Your Last name
+                </div>
+                <div *ngIf="submitted && myForm.controls.lname.errors.lname">
+                  You must Enter Last Name
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <label class="Username">Email</label>
+              <input [ngClass]="{'is-invalid': submitted && myForm.controls.email.errors}" type="text" formControlName='email'  required class="Rectangle-Copy" />
+              <div *ngIf="submitted && myForm.controls.email.errors">
+                <div *ngIf="submitted && myForm.controls.email.errors.required" class="text-danger">
+                  Enter Your Email ID
+                </div>
+                <div *ngIf="submitted && myForm.controls.email.errors.email">
+                  You must Enter Valid Email ID
+                </div>
+              </div>
+            </div>
+            <div>
+              <label class="Password">Password</label>
+              <input [ngClass]="{'is-invalid': submitted && myForm.controls.password.errors}" type="text" formControlName='password'  required class="Rectangle-Copy" />
+              <div *ngIf="submitted && myForm.controls.password.errors">
+                <div *ngIf="submitted && myForm.controls.password.errors.required" class="text-danger">
+                  Enter Your password
+                </div>
+                <div *ngIf="submitted && myForm.controls.password.errors.password">
+                  You must Enter Valid password
+                </div>
+              </div>
+            </div>
+            <div>
+              <label class="Username">Contact</label>
+              <input [ngClass]="{'is-invalid': submitted && myForm.controls.contact.errors}" type="text" formControlName='contact'  required class="Rectangle-Copy" />
+              <div *ngIf="submitted && myForm.controls.contact.errors">
+                <div *ngIf="submitted && myForm.controls.contact.errors.required" class="text-danger">
+                  Enter Your contact number
+                </div>
+                <div *ngIf="submitted && myForm.controls.contact.errors.contact">
+                  You must Enter Valid contact number
+                </div>
+              </div>
+            </div>
+            <div>
+              <label class="Username">City</label>
+              <input [ngClass]="{'is-invalid': submitted && myForm.controls.city.errors}" type="text" formControlName='city'  required class="Rectangle-Copy" />
+              <div *ngIf="submitted && myForm.controls.city.errors">
+                <div *ngIf="submitted && myForm.controls.city.errors.required" class="text-danger">
+                  Enter Your city
+                </div>
+                <div *ngIf="submitted && myForm.controls.city.errors.city">
+                  You must Enter Valid city name
+                </div>
+              </div>
+            </div>
+            <div>
+              <button class="Rectangle" (click)="submit()">Register</button>
+            </div>
+        </form>
+        <div>
+          <p class="You-dont-have-an-ac">Already have account?<a class="text-style-1">Login</a></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
